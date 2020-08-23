@@ -17,7 +17,7 @@ class App extends Component {
             id={employee.id}
             key={employee.id}
             name={employee.name}
-            mage={employee.image}
+            image={employee.image}
             occupation={employee.occupation}
             location={employee.location}
           />
