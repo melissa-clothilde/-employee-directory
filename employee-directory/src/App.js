@@ -7,15 +7,31 @@ import employees from "./employees.json";
 
 class App extends Component {
   state = {
-    employees
+    employees,
+    search: ""
   };
+
+  onChange = (event) => this.setState({ [event.target.name]: event.target.value });
+
+  filterEmployee = (event, search) => {
+    event.preventDefault();
+    console.log('search value', search);
+    this.state.employees.filter(employee => 
+      search === employee.name);
+      this.setState({ employees });
+    }
+  
 
  // Map over this.state.wmployeews and render a EmployeeCard component for each employee object
   render() {
     return (
       <div>
         <Title>Employee Directory</Title>
-        <SearchBar />
+        <SearchBar 
+          filterEmployee= {this.filterEmployee}
+          onChange={this.onChange}
+          search={this.state.search}
+          />
         <Wrapper>
         {this.state.employees.map(employee => (
           <EmployeeCard

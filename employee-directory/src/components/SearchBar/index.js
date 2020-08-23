@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "./style.css";
 
-export class SearchBar extends Component {
-  render() {
+function SearchBar(props) {
     return (
-      <form>
+      <form onSubmit={() => props.filterEmployee}>
         <input
           type="text"
+          value={props.search}
+          name="search"
           placeholder="Search for an employee by name..."
           className="search-input"
+          onChange={props.onChange}
         />
           <input
           type="submit"
@@ -17,7 +19,7 @@ export class SearchBar extends Component {
         />
       </form>
     )
-  }
+  
 }
 
 export default SearchBar
