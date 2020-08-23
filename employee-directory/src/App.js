@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import EmployeeCard from './components/EmployeeCard';
+import Title from "./components/Title";
+import Wrapper from "./components/Wrapper";
 import employees from "./employees.json";
 
 class App extends Component {
@@ -10,8 +12,8 @@ class App extends Component {
  // Map over this.state.wmployeews and render a EmployeeCard component for each employee object
   render() {
     return (
-      <div className='wrapper'>
-        <h1>Employee Directory</h1>
+      <Wrapper>
+        <Title>Employee Directory</Title>
         {this.state.employees.map(employee => (
           <EmployeeCard
             id={employee.id}
@@ -22,7 +24,7 @@ class App extends Component {
             location={employee.location}
           />
         ))}
-      </div>
+      </Wrapper>
 
     )
   }
