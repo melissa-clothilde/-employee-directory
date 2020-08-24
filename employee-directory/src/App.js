@@ -11,46 +11,69 @@ class App extends Component {
     search: ""
   };
 
-  // componentDidMount() {
-  //   const search = this.state.search;
-  //   // const employees = this.state.employees;
-  //   if (!search) {
-  //     return
-  //   }
-  //   else {
-  //     const employees = this.getSnapshotBeforeUpdate.employees.filter(employee => employee.includes(search));
-  //     this.setState({ employees })
-  //   }
-  // }
+
 
   handleInputChange = event => {
     // this.state.search(event.target.value);
-    console.log("event.target.value", event.target.value);
+    // console.log("event.target.value", event.target.value);
+    this.setState({ search: event.target.value });
+    console.log("search state1", this.state.search);
+    // for (let i = 0; i < this.state.employees.length; i++) {
+    //     const employeeName = this.state.employees[i].name;
+    //     const employeeOccupation = this.state.employees[i].occupation;
+    //     const employeeLocation = this.state.employees[i].location;
+    //     console.log("employeeName", employeeName);
+    //     console.log("employeeOccupation", employeeOccupation);
+    //     console.log("employeeLocation", employeeLocation);
 
-    const search = event.target.value;
+    //     if (employeeName || employeeOccupation || employeeLocation === this.state.search) {
+    //       this.setState({ employees })
+    //     }
+    //     else {
+    //       alert("No such employee found!")
+    //     }
+    //   }
+       
+    // }
     // const employees = this.state.employees;
-    if (!search) {
-      return
-    }
-    else {
+    // if (!search) {
+    //   return
+    // }
+    // else {
+    //   this.state.employees.map(employee => {
+
+    //   })
+
+
       // const employees = this.state.employees.filter(employee => employee.includes(search));
-      for (let i = 0; i < this.state.employees.length; i++) {
-        const employee = this.state.employees[i].name;
+      // for (let i = 0; i < this.state.employees.length; i++) {
+      //   const employee = this.state.employees[i].name;
         // console.log("employee", employee)
         // const employees = this.state.employees[i].name.filter(employee => this.state.employees[i].name.includes(search));
         // this.setState({ employees })
-        if (employee.includes(search)) {
-          console.log("if works!")
-          this.setState({ employees })
-        }
-      }
+      //   if (employee.includes(search)) {
+      //     console.log("if works!")
+      //     this.setState({ employees })
+      //   }
+      // }
       // return (employee[i].includes(search) ? this.setState({ employees: employee }) : alert("No such employee found!"))
-    }
+    
     // console.log(employees);
     // this.setState({ employees })
     // return
   }
 
+  componentDidMount(search) {
+    // const employees = this.state.employees;
+    console.log("search state2", this.state.search);
+    if (!search) {
+      return
+    }
+    else {
+      let employees = this.state.employees.filter(employee => employee.name.includes(search));
+      this.setState({ employees })
+    }
+  }
 
   removeEmployee = id => {
     // Filter this.state.friends for friends with an id not equal to the id being removed
