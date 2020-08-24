@@ -20,13 +20,12 @@ function SearchBar(props) {
           value={props.search}
           placeholder="Search for an employee by name..."
           className="search-input"
-          onChange={props.handleInputChange}
+          onClick={props.handleInputChange}
         />
-          <input
-          type="submit"
-          value="Search"
-          className="btn"
-        />
+          <button
+          className="btn btn-success"
+          onClick={props.sortEmployees}
+          />
       </form>
     )
   

@@ -4,6 +4,7 @@ import Title from "./components/Title";
 import employees from "./employees.json";
 import SearchResults from './components/SearchResults';
 
+
 class App extends Component {
   state = {
     employees,
@@ -36,12 +37,12 @@ class App extends Component {
       for (let i = 0; i < this.state.employees.length; i++) {
         const employee = this.state.employees[i].name;
         // console.log("employee", employee)
-        const employees = this.state.employees[i].name.filter(employee => this.state.employees[i].name.includes(search));
-        this.setState({ employees })
-        // if (employee.includes(search)) {
-        //   console.log("if works!")
-        //   this.setState({ employees })
-        // }
+        // const employees = this.state.employees[i].name.filter(employee => this.state.employees[i].name.includes(search));
+        // this.setState({ employees })
+        if (employee.includes(search)) {
+          console.log("if works!")
+          this.setState({ employees })
+        }
       }
       // return (employee[i].includes(search) ? this.setState({ employees: employee }) : alert("No such employee found!"))
     }
@@ -58,6 +59,14 @@ class App extends Component {
     this.setState({ employees });
   };
 
+  sortEmployees = (event) => {
+    event.preventDefault();
+    console.log("sorted!1")
+    const employees = this.state.employees;
+    employees.sort((a,b) => (a.name > b.name) ? 1 : -1)
+    this.setState({ employees });
+  }
+
   render() {
     return (
       <div>
@@ -66,10 +75,11 @@ class App extends Component {
           // filterEmployee={this.filterEmployee}
           handleInputChange={this.handleInputChange}
           results={this.state.search}
+          sortEmployees={this.sortEmployees}
         />
         <SearchResults
           employees={this.state.employees}
-          removeEmployee={this.state.removeEmployee} />
+          removeEmployee={this.removeEmployee} />
       </div>
     )
   }
