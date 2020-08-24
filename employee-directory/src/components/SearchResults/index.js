@@ -1,14 +1,14 @@
 import React from 'react';
-import EmployeeCard from '../EmployeeCard';
+import EmployeeRow from '../EmployeeCard';
 import Wrapper from "../Wrapper";
-
-  // Map over this.state.employeews and render a EmployeeCard component for each employee object
+import TableHeading from "../TableHeading";
 
 function SearchResults(props) {
   return (
     <Wrapper>
+      <TableHeading />
       {props.employees.map(employee => (
-        <EmployeeCard
+        <EmployeeRow
           removeEmployee={props.removeEmployee}
           id={employee.id}
           key={employee.id}
