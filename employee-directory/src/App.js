@@ -1,15 +1,55 @@
 import React, { Component } from 'react';
-import EmployeeCard from './components/EmployeeCard';
 import SearchBar from "./components/SearchBar";
 import Title from "./components/Title";
-import Wrapper from "./components/Wrapper";
 import employees from "./employees.json";
+import SearchResults from './components/SearchResults';
 
 class App extends Component {
   state = {
     employees,
     search: ""
   };
+
+  // componentDidMount() {
+  //   const search = this.state.search;
+  //   // const employees = this.state.employees;
+  //   if (!search) {
+  //     return
+  //   }
+  //   else {
+  //     const employees = this.getSnapshotBeforeUpdate.employees.filter(employee => employee.includes(search));
+  //     this.setState({ employees })
+  //   }
+  // }
+
+  handleInputChange = event => {
+    // this.state.search(event.target.value);
+    console.log("event.target.value", event.target.value);
+
+    const search = event.target.value;
+    // const employees = this.state.employees;
+    if (!search) {
+      return
+    }
+    else {
+      // const employees = this.state.employees.filter(employee => employee.includes(search));
+      for (let i = 0; i < this.state.employees.length; i++) {
+        const employee = this.state.employees[i].name;
+        // console.log("employee", employee)
+        const employees = this.state.employees[i].name.filter(employee => this.state.employees[i].name.includes(search));
+        this.setState({ employees })
+        // if (employee.includes(search)) {
+        //   console.log("if works!")
+        //   this.setState({ employees })
+        // }
+      }
+      // return (employee[i].includes(search) ? this.setState({ employees: employee }) : alert("No such employee found!"))
+    }
+    // console.log(employees);
+    // this.setState({ employees })
+    // return
+  }
+
 
   removeEmployee = id => {
     // Filter this.state.friends for friends with an id not equal to the id being removed
@@ -18,40 +58,18 @@ class App extends Component {
     this.setState({ employees });
   };
 
-  onChange = (event) => this.setState({ [event.target.name]: event.target.value });
-
-  filterEmployee = (event, search) => {
-    event.preventDefault();
-    console.log('search value', search);
-    this.state.employees.filter(employee =>
-      search === employee.name);
-    this.setState({ employees });
-  }
-
-
-  // Map over this.state.wmployeews and render a EmployeeCard component for each employee object
   render() {
     return (
       <div>
         <Title>Employee Directory</Title>
         <SearchBar
-          filterEmployee={this.filterEmployee}
-          onChange={this.onChange}
-          search={this.state.search}
+          // filterEmployee={this.filterEmployee}
+          handleInputChange={this.handleInputChange}
+          results={this.state.search}
         />
-        <Wrapper>
-          {this.state.employees.map(employee => (
-            <EmployeeCard
-              removeEmployee={this.removeEmployee}
-              id={employee.id}
-              key={employee.id}
-              name={employee.name}
-              image={employee.image}
-              occupation={employee.occupation}
-              location={employee.location}
-            />
-          ))}
-        </Wrapper>
+        <SearchResults
+          employees={this.state.employees}
+          removeEmployee={this.state.removeEmployee} />
       </div>
     )
   }
