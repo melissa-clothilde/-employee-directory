@@ -61,9 +61,19 @@ class App extends Component {
 
   sortEmployees = (event) => {
     event.preventDefault();
-    console.log("sorted!1")
     const employees = this.state.employees;
     employees.sort((a,b) => (a.name > b.name) ? 1 : -1)
+    this.setState({ employees });
+  }
+  sortOccupation = (event) => {
+    const employees = this.state.employees;
+    employees.sort((a,b) => (a.occupation > b.occupation) ? 1 : -1)
+    this.setState({ employees });
+  }
+  sortLocation = (event) => {
+    event.preventDefault();
+    const employees = this.state.employees;
+    employees.sort((a,b) => (a.location > b.location) ? 1 : -1)
     this.setState({ employees });
   }
 
@@ -76,6 +86,8 @@ class App extends Component {
           handleInputChange={this.handleInputChange}
           results={this.state.search}
           sortEmployees={this.sortEmployees}
+          sortOccupation={this.sortOccupation}
+          sortLocation={this.sortLocation}
         />
         <SearchResults
           employees={this.state.employees}
