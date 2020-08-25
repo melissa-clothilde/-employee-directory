@@ -11,13 +11,36 @@ class App extends Component {
     search: ""
   };
 
-
+  // componentDidMount(search) {
+    
+  //   // const employees = this.state.employees;
+  //   console.log("search state2", this.state.search);
+  //   if (!search) {
+  //     return
+  //   }
+  //   else {
+  //     let employees = this.state.employees.filter(employee => employee.name.includes(search));
+  //     this.setState({ employees })
+  //   }
+  // }
 
   handleInputChange = event => {
     // this.state.search(event.target.value);
     // console.log("event.target.value", event.target.value);
     this.setState({ search: event.target.value });
-    console.log("search state1", this.state.search);
+    console.log("search state", event.target.value);
+    if (!event.target.value) {
+      this.setState({ employees })
+    }
+    else {
+      let employees = this.state.employees.filter(
+        employee => {
+        console.log(employee);
+        const name = employee.name;
+        name.includes(event.target.value)});
+      this.setState({ employees })
+    }
+   
     // for (let i = 0; i < this.state.employees.length; i++) {
     //     const employeeName = this.state.employees[i].name;
     //     const employeeOccupation = this.state.employees[i].occupation;
@@ -63,18 +86,6 @@ class App extends Component {
     // return
   }
 
-  componentDidMount(search) {
-    // const employees = this.state.employees;
-    console.log("search state2", this.state.search);
-    if (!search) {
-      return
-    }
-    else {
-      let employees = this.state.employees.filter(employee => employee.name.includes(search));
-      this.setState({ employees })
-    }
-  }
-
   removeEmployee = id => {
     // Filter this.state.friends for friends with an id not equal to the id being removed
     const employees = this.state.employees.filter(employee => employee.id !== id);
@@ -82,19 +93,18 @@ class App extends Component {
     this.setState({ employees });
   };
 
-  sortEmployees = (event) => {
-    event.preventDefault();
+  sortEmployees = () => {
+    
     const employees = this.state.employees;
     employees.sort((a,b) => (a.name > b.name) ? 1 : -1)
     this.setState({ employees });
   }
-  sortOccupation = (event) => {
+  sortOccupation = () => {
     const employees = this.state.employees;
     employees.sort((a,b) => (a.occupation > b.occupation) ? 1 : -1)
     this.setState({ employees });
   }
-  sortLocation = (event) => {
-    event.preventDefault();
+  sortLocation = () => {
     const employees = this.state.employees;
     employees.sort((a,b) => (a.location > b.location) ? 1 : -1)
     this.setState({ employees });
