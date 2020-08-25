@@ -1,5 +1,5 @@
 import React from 'react';
-import EmployeeRow from '../EmployeeCard';
+import EmployeeRow from '../EmployeeRow';
 import Wrapper from "../Wrapper";
 import TableHeading from "../TableHeading";
 
