@@ -1,0 +1,30 @@
+form {
+  /* display: flex; */
+  margin-bottom: 15px;
+}
+
+.search-input {
+  /* flex: 10; */
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.btn {
+  position: relative;
+  margin-top: 10px;
+  /* border: solid 2px; */
+  /* color: #404040;
+  border-color: #404040;
+  background:#E8E8E8; */
+  background: #404040; 
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  bottom: 6px;
+}
+
