@@ -1,37 +1,6 @@
 import React from 'react';
 import "./style.css";
 
-// onChange = (event) => this.setState({ [event.target.name]: event.target.value });
-
-// const filterEmployee = (event, search) => {
-//   event.preventDefault();
-//   console.log('search value', search);
-// this.state.employees.filter(employee =>
-//   search === employee.name);
-// this.setState({ employees });
-// }
-// const update = () => {
-//   if (this.value === "Name") { 
-//     this.value = "Name";}
-//   else {
-//     this.value = "Name";
-//   }
-
-//   if (this.value === "Occupation") {
-//     console.log("this.value", this.value)
-//     this.previousSibling.value = "Occupation";}
-//   else { 
-//     this.value = "Name";
-//   }
-
-//   if (this.value === "Location") {
-//     this.value = "Location";
-//   } 
-//   else {
-//     this.value = "Name";
-//   }
-// }
-
 function SearchBar(props) {
   return (
     <form>
@@ -53,7 +22,7 @@ function SearchBar(props) {
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
-          Name
+          {props.sortColumn}
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
           <button
