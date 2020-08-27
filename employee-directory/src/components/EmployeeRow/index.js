@@ -1,7 +1,13 @@
 import React from 'react';
 import "./style.css";
+import Modal from "../Modal";
 
 function EmployeeRow(props) {
+  const handleImageClick = (id) => {
+    if (props.id === id) {
+    console.log(id);
+    }
+  }
   return (
     <tbody>
       <tr>
@@ -19,24 +25,10 @@ function EmployeeRow(props) {
             type="button"
             className="btn btn-primary"
             data-toggle="modal"
-            data-target="#exampleModal">View Photo</button>
-          <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog" role="document">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">{props.name}</h5>
-                  <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <div className="img-container">
-                    <img alt={props.name} src={props.image} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            data-target="#exampleModal"
+            onClick={() => handleImageClick(props.id)}>View Photo
+          </button>
+          <Modal id={props.id} name={props.name} image={props.image}/>
         </td>
         <td>
           <button
