@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from "./components/SearchBar";
 import Title from "./components/Title";
-import employees from "./employees.json";
+import employees from "./employees";
 import SearchResults from './components/SearchResults';
 
 
@@ -36,6 +36,7 @@ class App extends Component {
     this.setState({ employees });
   };
 
+  // Sort employees by name, occupation and location
   sortEmployees = () => {
     const employees = this.state.employees;
     employees.sort((a, b) => (a.name > b.name) ? 1 : -1)

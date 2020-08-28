@@ -3,13 +3,13 @@ import EmployeeRow from '../EmployeeRow';
 import Wrapper from "../Wrapper";
 import TableHeading from "../TableHeading";
 
-function SearchResults(props) {
+function SearchResults({employees, removeEmployee}) {
   return (
     <Wrapper>
       <TableHeading />
-      {props.employees.map(employee => (
+      {employees.map(employee => (
         <EmployeeRow
-          removeEmployee={props.removeEmployee}
+          removeEmployee={removeEmployee}
           id={employee.id}
           key={employee.id}
           name={employee.name}
