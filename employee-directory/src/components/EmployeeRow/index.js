@@ -1,38 +1,32 @@
 import React from 'react';
 import "./style.css";
-import Modal from "../Modal";
+import Modal from '../Modal';
 
-function EmployeeRow(props) {
-  const handleImageClick = (id) => {
-    if (props.id === id) {
-    console.log(id);
-    }
-  }
+function EmployeeRow({name, occupation, location, id, image, removeEmployee}) {
   return (
     <tbody>
       <tr>
         <td>
-          {props.name}
+          {name}
         </td>
         <td>
-          {props.occupation}
+          {occupation}
         </td>
         <td>
-          {props.location}
+          {location}
         </td>
         <td>
           <button
             type="button"
             className="btn btn-primary"
             data-toggle="modal"
-            data-target="#exampleModal"
-            onClick={() => handleImageClick(props.id)}>View Photo
+            data-target={`#${id}`}>View Photo
           </button>
-          <Modal id={props.id} name={props.name} image={props.image}/>
+          <Modal id= {id} name={name} image={image}/>
         </td>
         <td>
           <button
-            onClick={() => props.removeEmployee(props.id)}
+            onClick={() => removeEmployee(id)}
             className="remove">X
           </button>
         </td>

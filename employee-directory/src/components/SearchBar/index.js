@@ -1,16 +1,16 @@
 import React from 'react';
 import "./style.css";
 
-function SearchBar(props) {
+function SearchBar({search, handleInputChange, sortEmployees, sortColumn, sortLocation, sortOccupation}) {
   return (
     <form>
       <input
         type="text"
         name="search"
-        value={props.search}
+        value={search}
         placeholder="Search for an employee by name..."
         className="search-input"
-        onChange={props.handleInputChange}
+        onChange={handleInputChange}
       />
 
       <div className="dropdown">Sort by:
@@ -18,26 +18,26 @@ function SearchBar(props) {
           className="btn btn-secondary dropdown-toggle name-sort"
           type="button"
           id="dropdownMenuButton"
-          onClick={props.sortEmployees}
+          onClick={sortEmployees}
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
-          {props.sortColumn}
+          {sortColumn}
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
           <button
             className="dropdown-item"
             type="button"
-            onClick={props.sortEmployees}>Name
+            onClick={sortEmployees}>Name
           </button>
           <button
             className="dropdown-item"
-            onClick={props.sortOccupation}
+            onClick={sortOccupation}
             type="button">Occupation
           </button>
           <button
             className="dropdown-item"
-            onClick={props.sortLocation}
+            onClick={sortLocation}
             type="button">Location
           </button>
         </div>

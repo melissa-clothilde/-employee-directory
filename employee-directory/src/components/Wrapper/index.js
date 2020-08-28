@@ -1,7 +1,7 @@
 import React from "react";
 
-function Wrapper(props) {
-  return <table className="table">{props.children}</table>;
+function Wrapper({children}) {
+  return <table className="table">{children}</table>;
 }
 
 export default Wrapper;
