@@ -56,7 +56,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Title>Employee Directory</Title>
+        <Title/>
         <SearchBar
           handleInputChange={this.handleInputChange}
           results={this.state.search}

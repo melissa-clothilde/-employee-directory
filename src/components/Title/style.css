@@ -1,11 +1,32 @@
-.title {
-  width: 100%;
-  background: red;
+.logo {
+  width: 300px;
+  height: 140px;
   text-align: center;
   font-size: 3rem;
-  padding: 15px;
+  /* padding: 15px; */
   color: #fff;
   text-decoration: none;
   margin: 0;
+  /* background: url("../images/background.jpg"); */
+}
+
+.navbar {
+  padding: 0;
+}
+
+.admin-btn {
+  border: none;
+  background: transparent;
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.admin-btn:hover {
+  background: transparent;
+}
+
+.nav-background {
+  background: url("../images/characters.jpg"); 
   
 }
