@@ -13,3 +13,7 @@ img {
   width: 400px;
   height: 478px;
 }
+
+body {
+  background: url("./assets/images/background.jpg");
+}

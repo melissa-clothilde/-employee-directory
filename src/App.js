@@ -56,7 +56,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Title>Employee Directory</Title>
+        <Title />
         <SearchBar
           handleInputChange={this.handleInputChange}
           results={this.state.search}
@@ -65,9 +65,12 @@ class App extends Component {
           sortLocation={this.sortLocation}
           sortColumn={this.state.sortColumn}
         />
+        <div className="container pt-3 my-3 border bkgd-img">
         <SearchResults
           employees={this.state.employees}
           removeEmployee={this.removeEmployee} />
+        </div>
+       
       </div>
     )
   }

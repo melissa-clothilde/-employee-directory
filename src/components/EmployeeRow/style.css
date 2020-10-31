@@ -1,5 +1,14 @@
 .remove {
   border-radius: 5px;
   color: #fff;
-  background: #404040;
+  background: #fcaf58;
+}
+
+.btn {
+   background: #fcaf58;
+
+}
+
+td {
+  background-color: #fff;
 }

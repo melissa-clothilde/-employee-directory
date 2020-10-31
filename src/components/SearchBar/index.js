@@ -3,7 +3,7 @@ import "./style.css";
 
 function SearchBar({search, handleInputChange, sortEmployees, sortColumn, sortLocation, sortOccupation}) {
   return (
-    <form>
+    <form className="container-fluid">
       <input
         type="text"
         name="search"
@@ -18,7 +18,6 @@ function SearchBar({search, handleInputChange, sortEmployees, sortColumn, sortLo
           className="btn btn-secondary dropdown-toggle name-sort"
           type="button"
           id="dropdownMenuButton"
-          onClick={sortEmployees}
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
