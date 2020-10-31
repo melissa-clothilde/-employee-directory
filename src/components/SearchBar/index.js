@@ -13,9 +13,9 @@ function SearchBar({search, handleInputChange, sortEmployees, sortColumn, sortLo
         onChange={handleInputChange}
       />
 
-      <div className="dropdown">Sort by:
+      <div className="dropdown container">Sort by: 
         <button
-          className="btn btn-secondary dropdown-toggle name-sort"
+          className="dropdown-toggle name-sort"
           type="button"
           id="dropdownMenuButton"
           onClick={sortEmployees}

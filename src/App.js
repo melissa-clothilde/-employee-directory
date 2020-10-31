@@ -65,10 +65,12 @@ class App extends Component {
           sortLocation={this.sortLocation}
           sortColumn={this.state.sortColumn}
         />
+        <div className="container">
         <SearchResults
           employees={this.state.employees}
           removeEmployee={this.removeEmployee} />
-      </div>
+        </div>
+        </div>
     )
   }
 }

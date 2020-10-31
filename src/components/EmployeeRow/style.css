@@ -1,5 +1,11 @@
 .remove {
   border-radius: 5px;
   color: #fff;
-  background: #404040;
+  background: rgba(192, 147, 147, 0.685);
+}
+
+.btn-photo {
+  background: rgba(245, 200, 118, 0.836);
+  border-radius: 5px;
+
 }

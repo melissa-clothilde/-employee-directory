@@ -17,3 +17,18 @@ img {
 body { 
     padding-top: 140px; 
 }
+
+body {
+  background: url("./components/images/background.jpg");
+}
+
+td {
+  background: #fff;
+  border-radius: 5px;
+
+}
+
+th {
+  border-radius: 5px;
+}
+

@@ -7,7 +7,7 @@
   color: #fff;
   text-decoration: none;
   margin: 0;
-  /* background: url("../images/background.jpg"); */
+  background: url("../images/background.jpg");
 }
 
 .navbar {
@@ -20,6 +20,8 @@
   font-size: 26px;
   font-weight: bold;
   color: #fff;
+    background: url("../images/background.jpg");
+height: 140px;
 }
 
 .admin-btn:hover {
@@ -28,5 +30,6 @@
 
 .nav-background {
   background: url("../images/characters.jpg"); 
-  
+  background-position: 270px;
+  padding: 0;
 }

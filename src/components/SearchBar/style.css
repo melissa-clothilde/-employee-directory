@@ -6,13 +6,15 @@ form {
   width: 100%;
   padding: 10px;
   font-size: 15px;
-  border-radius: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 3px;
 }
 
 .btn {
   position: relative;
   margin-top: 10px;
-  background: #404040; 
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;
@@ -22,3 +24,16 @@ form {
   bottom: 6px;
 }
 
+.dropdown {
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.name-sort {
+  background-color: rgba(245, 200, 118, 0.836);
+  color: #404040;
+  border-radius: 5px;
+  margin-left: 3px;
+}
