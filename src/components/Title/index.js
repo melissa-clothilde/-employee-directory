@@ -10,7 +10,7 @@ function Title({children}) {
           <img className="logo" src={logo} alt="logo" />
         </div>
         <ul className="nav navbar-nav navbar-right">
-          <li><button className="btn-light admin-btn" href="#">Welcome Admin!</button></li>
+          <li><button className="admin-btn" href="#">Welcome Admin!</button></li>
         </ul>
       </div>
     </nav>

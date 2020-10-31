@@ -10,6 +10,11 @@ form {
   border-left: none;
   border-right: none;
   border-radius: 3px;
+  margin-top: 130px;
+}
+
+.search-input:focus { 
+    outline: none; 
 }
 
 .btn {
@@ -29,6 +34,10 @@ form {
   text-align: right;
   margin-top: 10px;
   color: #fff;
+}
+
+.name-sort:focus { 
+    outline: none; 
 }
 
 .name-sort {

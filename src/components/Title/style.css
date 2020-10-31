@@ -16,16 +16,22 @@
 
 .admin-btn {
   border: none;
-  background: transparent;
   font-size: 26px;
   font-weight: bold;
   color: #fff;
-    background: url("../images/background.jpg");
-height: 140px;
+  background: url("../images/background.jpg");
+  height: 140px;
+}
+
+
+.admin-btn:focus { 
+    outline: none; 
 }
 
 .admin-btn:hover {
-  background: transparent;
+  background: url("../images/background.jpg");
+  text-decoration: none;
+  color: #fff;
 }
 
 .nav-background {

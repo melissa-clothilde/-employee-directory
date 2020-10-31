@@ -4,8 +4,15 @@
   background: rgba(192, 147, 147, 0.685);
 }
 
+.remove:focus {
+  outline: none;
+}
+
 .btn-photo {
   background: rgba(245, 200, 118, 0.836);
   border-radius: 5px;
+}
 
+.btn-photo:focus {
+  outline: none;
 }

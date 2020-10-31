@@ -9,7 +9,7 @@ function SearchBar({search, handleInputChange, sortEmployees, sortColumn, sortLo
         name="search"
         value={search}
         placeholder="Search for an employee by name..."
-        className="search-input"
+        className="search-input fixed-top"
         onChange={handleInputChange}
       />
 
